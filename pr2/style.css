@@ -1,0 +1,41 @@
+body {
+        background-color: #f8f9fa;
+}
+
+.container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+        width: 20rem;
+        height: 20rem;
+        border-radius: .9rem;
+        box-shadow: 0 0 3rem .9rem black;
+        position: absolute;
+        left: 40%;
+}
+
+.navbar {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+        font-weight: bold;
+}
+
+.card {
+        max-width: 78vw !important;
+        position: relative;
+        height: 75vh !important;
+}
+
+h1 {
+        color: #007bff;
+}
+.card-text{
+        position:absolute;
+        bottom:0;
+}

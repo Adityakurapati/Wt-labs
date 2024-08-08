@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Number to Words Converter</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+      body {
+        background: violet;
+      }
+      .title {
+        color: white;
+        font-size: 0.9rem !important;
+      }
+      input {
+        padding: 0.9rem;
+        border-radius: 0.8rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="title">Number to Words Converter</h1>
+      <p class="description">
+        Enter a number between 0 and 999 to see it in words.
+      </p>
+
+      <input type="number" id="numberInput" placeholder="Enter a number" />
+
+      <p class="output" id="output"></p>
+
+      <script type="module" src="script.js"></script>
+
+      <script>
+        let input = document.querySelector("#numberInput");
+        let output = document.querySelector("#output");
+
+        let words = {
+          0: "zero",
+          1: "one",
+          2: "two",
+          3: "three",
+          4: "four",
+          5: "five",
+          6: "six",
+          7: "seven",
+          8: "eight",
+          9: "nine",
+          10: "ten",
+          11: "eleven",
+          12: "twelve",
+          13: "thirteen",
+          14: "fourteen",
+          15: "fifteen",
+          16: "sixteen",
+          17: "seventeen",
+          18: "eighteen",
+          19: "nineteen",
+          20: "twenty",
+          30: "thirty",
+          40: "forty",
+          50: "fifty",
+          60: "sixty",
+          70: "seventy",
+          80: "eighty",
+          90: "ninety",
+        };
+
+        function convertToWords(num) {
+          if (num === 0) return words[0];
+          if (num <= 19) return words[num];
+
+          let result = "";
+
+          if (num >= 100) {
+            let hundreds = Math.floor(num / 100);
+            result += words[hundreds] + " hundred";
+            num %= 100;
+            if (num > 0) result += " and ";
+          }
+
+          if (num > 0 && num <= 19) {
+            result += words[num];
+          } else if (num >= 20) {
+            let tens = Math.floor(num / 10) * 10;
+            let units = num % 10;
+            result += words[tens];
+            if (units) result += "-" + words[units];
+          }
+
+          return result;
+        }
+
+        input.addEventListener("input", function () {
+          let userInput = parseInt(input.value);
+
+          if (isNaN(userInput) || userInput < 0 || userInput > 999) {
+            output.textContent = "Please enter a number between 0 and 999.";
+          } else {
+            output.textContent = convertToWords(userInput);
+          }
+          if (userInput[0] == "0") {
+            output.textContent = "Invalid Input";
+          }
+          
+          if (userInput.contains('and')) {
+            output.textContent = result[userInput[0]]+" and " +  result[userInput[userInput.length]]
+          }
+        });
+      </script>
+    </main>
+  </body>
+</html>

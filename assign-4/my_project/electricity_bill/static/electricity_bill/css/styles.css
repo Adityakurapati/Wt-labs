@@ -1,0 +1,38 @@
+body {
+        background-color: #d4d4d4;
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        place-items: center;
+}
+
+.card {
+        border-radius: 10px;
+}
+
+.card-header {
+        background-color: #007bff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+}
+
+.form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+}
+
+.btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004a8a;
+}
+
+#result {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #28a745;
+}
